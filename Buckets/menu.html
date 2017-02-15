@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Week 2</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Buckets!</a>
+      <a href="menu.html" class="selected">Options</a>
+      <a href="game.html">The Game</a>
+    </nav>
+
+    <article>
+      <h1>Options</h1>
+
+      <p>Buckets! does not have much in the way of options, but this page shows you what is roughly possible through the HTML Forms tag. In addition it shows that you can store user settings such as <strong>Difficulty Level</strong> without a server using the <a href="https://developer.mozilla.org/en/docs/Web/API/Window/localStorage">localStorage</a> constructs available in HTML and JavaScript.</p>
+
+      <form>
+        <label for="difficultySelector"><strong>Difficulty:</strong></label>
+        <select id="difficultySelector">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </form>
+
+      <h2>Difficulty Guide</h2>
+
+      <table class="difficulty-table">
+        <thead>
+          <tr>
+            <th>Difficulty</th>
+            <th>Number of Circles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Easy</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Medium</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Hard</td>
+            <td>50</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <script>
+      var difficulty = window.localStorage.getItem('difficulty')
+
+      var difficultySelector = document.getElementById('difficultySelector')
+      difficultySelector.addEventListener('change', function() {
+        window.localStorage.setItem('difficulty', difficultySelector.options[difficultySelector.selectedIndex].value)
+      })
+
+      switch (difficulty) {
+      case 'easy':
+        difficultySelector.selectedIndex = 0
+        break
+      case 'medium':
+        difficultySelector.selectedIndex = 1
+        break
+      case 'hard':
+        difficultySelector.selectedIndex = 2
+        break
+      }
+    </script>
+  </body>
+</html>

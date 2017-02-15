@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Buckets!</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/game.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="js/vendor/paper-full.js"></script>
+    <script type="text/paperscript" canvas="bucketsGame">
+      function createBucket() {
+        bucket = new Path()
+        bucket.strokeColor = 'black'
+        bucket.closed = true
+        bucket.add(new Point(0,  0))
+        bucket.add(new Point(0,  100))
+        bucket.add(new Point(100, 100))
+        bucket.add(new Point(100, 0))
+        bucket.add(new Point(80, 0))
+        bucket.add(new Point(80, 80))
+        bucket.add(new Point(20, 80))
+        bucket.add(new Point(20, 0))
+        return bucket
+      }
+
+      var state = null
+      var newState = 'countdown'
+      var time = 0
+
+      var screenCover
+      var screenCoverText
+      var countdownTimer = 0
+
+      var difficulty = window.localStorage.getItem('difficulty')
+
+      var circleCount = 5
+      switch (difficulty) {
+      case 'easy':
+        circleCount = 5
+        break
+      case 'medium':
+        circleCount = 25
+        break
+      case 'hard':
+        circleCount = 50
+        break
+      }
+
+      var circleSize = 15
+
+      var colours = ['yellow', 'red', 'blue', 'green']
+
+      var buckets = []
+      for (var i = 0; i < colours.length; i++) {
+        buckets[i] = createBucket()
+        buckets[i].fillColor = colours[i]
+        buckets[i].position += new Point(view.size.width / colours.length * (i + 0.5) - buckets[i].strokeBounds.width / 2, view.size.height - buckets[i].strokeBounds.height)
+      }
+
+      var circles = []
+      for (var i = 0; i < circleCount; i++) {
+        circles[i] = Path.Circle(new Point(Math.floor(Math.random() * (view.size.width - circleSize * 2)) + circleSize, Math.floor(Math.random() * (view.size.height - buckets[0].strokeBounds.height - 50 - circleSize * 2)) + circleSize + 50), circleSize);
+        circles[i].strokeColor = 'black';
+        circles[i].fillColor = colours[Math.floor(Math.random() * colours.length)];
+        circles[i].isCircle = true
+      }
+
+      var score = new PointText({
+          point: [0, 25],
+          content: 'Time: 0',
+          fillColor: 'black',
+          justification: 'left',
+          fontFamily: 'Courier New',
+          fontWeight: 'bold',
+          fontSize: 25
+      });
+
+      var activeCircle
+      function onMouseDown(event) {
+        activeCircle = null
+
+        var hitResult = project.hitTest(event.point, {
+          fill: true,
+          tolerance: 5
+        })
+
+        if (!hitResult) {
+          return
+        }
+        if (hitResult.item && !hitResult.item.isCircle) {
+          return
+        }
+
+        activeCircle = hitResult.item
+        project.activeLayer.addChild(hitResult.item)
+      }
+
+      function onMouseDrag(event) {
+        if (activeCircle) {
+          activeCircle.position += event.delta
+        }
+      }
+
+      function onMouseUp(event) {
+        if (!activeCircle) {
+          return
+        }
+
+        var bBound
+
+        for (var i = 0; i < buckets.length; i++) {
+          bBound = buckets[i].strokeBounds
+          bBound.x += 20
+          bBound.width -= 40
+          bBound.height -= 20
+
+          if (activeCircle.isInside(bBound) && activeCircle.fillColor == buckets[i].fillColor) {
+            circleCount--
+            activeCircle.remove()
+
+            if (circleCount == 0) {
+              newState = 'gameover'
+            }
+          }
+        }
+      }
+
+      function onFrame(event) {
+        var transition = newState
+        newState = null
+
+        if (transition) {
+          switch (transition) {
+          case 'countdown':
+            screenCover = new Path.Rectangle(view.size)
+            screenCover.fillColor = 'black'
+
+            screenCoverText = new PointText({
+                point: [view.size.width / 2, view.size.height / 2],
+                content: 'Ready?',
+                fillColor: 'white',
+                justification: 'center',
+                fontFamily: 'Courier New',
+                fontWeight: 'bold',
+                fontSize: 25
+            })
+
+            state = 'countdown'
+            countdownTimer = event.time
+
+            break
+          case 'game':
+            screenCover.remove()
+            screenCoverText.remove()
+
+            countdownTimer = event.time
+            state = 'game'
+
+            break
+          case 'gameover':
+            screenCover = new Path.Rectangle(view.size)
+            screenCover.fillColor = 'black'
+
+            screenCoverText = new PointText({
+                point: [view.size.width / 2, view.size.height / 2],
+                content: 'You finished in ' + Math.floor(event.time - countdownTimer) + ' seconds!',
+                fillColor: 'white',
+                justification: 'center',
+                fontFamily: 'Courier New',
+                fontWeight: 'bold',
+                fontSize: 25
+            })
+
+            state = 'gameover'
+
+            break
+          }
+          return
+        } else if (state == 'game') {
+          score.content = 'Time: ' + Math.floor(event.time - countdownTimer)
+        } else if (state == 'countdown') {
+          if (event.time > countdownTimer + 3) {
+            newState = 'game'
+            return
+          } else if (event.time > countdownTimer + 2) {
+            screenCoverText.content = 'Go!'
+            return
+          } else if (event.time > countdownTimer + 1) {
+            screenCoverText.content = 'Steady...'
+            return
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Buckets!</a>
+      <a href="menu.html">Options</a>
+      <a href="game.html" class="selected">The Game</a>
+    </nav>
+
+    <canvas id="bucketsGame" resize="true"></canvas>
+  </body>
+</html>

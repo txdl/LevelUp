@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Week 3</title>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <h1>Introducing HTML and CSS</h1>
+
+        <p>There are lots of different <strong>elements</strong> (a.k.a. tags) in HTML. They each have a different <em>semantic</em> meaning. For example, this is a <code>P</code> tag and it represents a PARAGRAPH.</p>
+
+        <div>
+            <h1>Headers</h1>
+
+            <p>HTML has lots of different <strong>Header</strong> tags. These serve to break content into more logical groupings</p>
+
+            <h1>Header 1</h1>
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <h4>Header 4</h4>
+            <h5>Header 5</h5>
+            <h6>And so on</h6>
+        </div>
+
+        <div>
+            <h1>Links!</h1>
+
+            <p>HTML has a single element for specifying links between different web-pages OR links to inside a particular web-page. It is called the <strong>ANCHOR</strong> element and it is repesented by the <code>A</code> tag.</p>
+
+            <a href="http://www.google.ca">Google</a>
+            <a href="#divandspan">Lesson 3 - DIV and SPANS</a>
+        </div>
+
+        <div>
+            <h1>Images</h1>
+
+            <p>One of the oldest elements in HTML is the <strong>IMAGE</strong> element. Not surprisingly, it inserts an image into the page.</p>
+
+            <img src="https://ih1.redbubble.net/image.106594870.4633/flat,800x800,075,f.jpg" />
+        </div>
+
+        <div>
+            <h1>Tables</h1>
+
+            <p>HTML allows you to render information in a tabular format using the <code>TABLE</code> element.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maggie</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Lisa</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Bart</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Marge</td>
+                        <td>36</td>
+                    </tr>
+                    <tr>
+                        <td>Homer</td>
+                        <td>39</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Average Age</th>
+                        <th>19</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div>
+            <h1>Forms</h1>
+
+            <p>HTML has built in elements for creating forms to capture user input.</p>
+
+            <form>
+                <div>
+                    <label>Text:</label> <input type="text" />
+                </div>
+                <div>
+                    <label>Checkbox:</label> <input type="checkbox" />
+                </div>
+                <div>
+                    <label>Drop Down:</label>
+                    <select>
+                        <option>Peter</option>
+                        <option>Lois</option>
+                        <option>Chris</option>
+                        <option>Meg</option>
+                        <option>Stewie</option>
+                    </select>
+                </div>
+                <div>
+                    <button>Button</button>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <h1>And Many Others</h1>
+
+            <p>See <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element">MDN</a> for the exhaustive list</p>
+        </div>
+
+        <div>
+            <a id="divandspan" />
+            <h1>DIV and SPAN</h1>
+
+            <p>There are two elements which have <strong>no</strong> semantic meaning and they exist solely to allow for presentation hooks. These two elements are <code>DIV</code> and <code>SPAN</code>. The only difference between the two is that <code>DIV</code> is a "block" level element and <code>SPAN</code> is a "inline" level element. We will explain this distinction shortly.</p>
+
+            <div>This is content in a DIV</div>
+            <span>This is content in a SPAN</span>
+        </div>
+
+        <div>
+            <h1>CSS</h1>
+
+            <p>Where HTML sets down the <strong>Structure</strong> of your content, CSS sets down the <strong>Style</strong> of your Content. CSS is a completely different language compared to HTML and it has its own syntax and rules. However, together, HTML and CSS can create almost any visual style you can think of (see <a href="http://www.csszengarden.com/">CSS Zen Garden</a> for examples). Broadly speaking, you can break up CSS into three fundamental parts: selectors, properties, and values.</p>
+
+            <ol>
+                <li>Selectors define the "path" for getting at a particular element (or sets of elements) in the HTML document. See <a href="http://www.w3schools.com/cssref/css_selectors.asp">CSS Selectors</a> for the full list.</li>
+                <li>Properties are the list of available attributes of elements that can be changed (e.g. colour, border, font size, background, margins, etc.). Not all properties apply to all elements, but there are a universal set that apply to all. See <a href="http://www.w3schools.com/cssref/default.asp">CSS Properties</a> for the full list.</li>
+                <li>Values define the value of the attribute you want to set. Each property has a distinct set of valud values. Look at individual Properties (from the above link) to see what their valid values are.</li>
+            </ol>
+        </div>
+
+        <div>
+            <h1>What can't it do?!</h1>
+
+            <p>While HTML and CSS are really powerful and have the ability to create varied visual styles, they can only provide limited amounts of <strong>interactivity</strong> to a web site. HTML by itself is completely static and has no mechanism for interactivity. CSS has some selectors and properties that react to user inputs like click, hover, etc, but they are comparatively limited. To achieve full interactivity, you need the third pillar of web development: JavaScript.</p>
+        </div>
+    </body>
+</html>

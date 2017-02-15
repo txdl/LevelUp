@@ -1,0 +1,54 @@
+nav {
+  background-color: grey;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: solid 1px black;
+  margin: 0;
+  padding: 1em;
+  display: inline-block;
+}
+nav a.selected {
+  text-decoration: none;
+  color: white;
+  border: solid 1px black;
+  background-color: black;
+  margin: 0;
+  padding: 1em;
+}
+article {
+  margin: 1em;
+}
+
+article img {
+  width: 30%;
+  padding: 1%;
+  border: solid 2px black;
+}
+
+.difficulty-table {
+  border: solid 1px black;
+  margin: 1em;
+}
+.difficulty-table td,
+.difficulty-table th {
+  border: solid 1px black;
+  padding: 5px;
+}
+
+p.playnow {
+  text-align: center;
+  margin-top: 3em;
+}
+p.playnow a {
+  font-size: 400%;
+  font-weight: bold;
+  text-decoration: none;
+  color: blue;
+  border: solid 5px black;
+  padding: 10px;
+  text-align: center;
+  background-color: aqua;
+}
