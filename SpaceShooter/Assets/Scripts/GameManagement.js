@@ -6,7 +6,7 @@ var gameOverText: GUIText;
 
 var score: float;
 
-function Start () {
+function Awake () {
 	scoreText.text = "Score: "+score;
 	restartText.text = "";
 	gameOverText.text = "";

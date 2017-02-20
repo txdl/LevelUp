@@ -37,6 +37,7 @@ function Start () {
 
 function Update () {
 	//checking for player input and creating shot
+	//if (Input.GetButton("Fire1") && Time.time > nextFire){
 	if (Input.GetButton("Fire1") && Time.time > nextFire){
 		FireShot();
 	}
@@ -46,7 +47,7 @@ function Update () {
 }
 
 function FixedUpdate(){
-	rb.AddForce(movement*moveSpeed);
+	rb.AddForce(movement*moveSpeed,ForceMode.Acceleration);
 }
 
 function FireShot(){
