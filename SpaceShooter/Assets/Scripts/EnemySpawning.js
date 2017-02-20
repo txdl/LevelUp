@@ -10,9 +10,19 @@ var nextSpawn: float;
 var fireRateToSet: float;
 var moveSpeedToSet: float;
 var jukeStrengthToSet: float;
+private var backgroundTimer: float;
+
+function Start(){
+	//reset on restart
+	waveNumber = 0;
+	hazardAmt = 1;
+	nextSpawn = 2;
+	backgroundTimer = 0;
+}
 
 function Update () {
-	if (Time.time > nextSpawn){
+	backgroundTimer += Time.deltaTime;
+	if (backgroundTimer > nextSpawn){
 		SpawnHazards(hazardAmt);
 	}
 }
