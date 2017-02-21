@@ -1,0 +1,33 @@
+body {
+  background-color: WhiteSmoke;
+  color: SlateGray;
+}
+
+.title {
+  margin: 25px auto;
+  color: SlateGray;
+  text-align: center;
+}
+
+.instructors {
+  padding: 15px;
+}
+
+.instructors img {
+  height: 150px;
+  width: 150px;
+}
+
+.name {
+  width: 50%;
+  height: 150px;
+  float: left;
+  vertical-align: center;
+}
+
+.mugshot {
+  width: 50%;
+  float: right;
+  /*position: relative;
+  right: 10px;*/
+}
