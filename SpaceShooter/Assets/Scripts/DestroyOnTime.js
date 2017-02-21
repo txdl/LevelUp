@@ -6,3 +6,6 @@ function Start () {
 	Destroy(gameObject,lifetime);
 }
 
+function OnDisable (){
+	Destroy(gameObject);
+}

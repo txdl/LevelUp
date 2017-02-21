@@ -4,6 +4,7 @@ var moveSpeed: float;
 var randomSpin: boolean;
 var moveNJuke: boolean;
 var jukeInterval: float;
+var jukeStrength: float = 1;
 var deathExplosion: GameObject;
 private var rb: Rigidbody;
 private var timeToJuke: float;
@@ -24,7 +25,8 @@ function Update () {
 
 function Juke(){
 	//Debug.Log("Juke");
-	rb.AddForce(Vector3.right*Random.Range(-moveSpeed, moveSpeed),ForceMode.Impulse);
+	var jukeForce: float = moveSpeed * jukeStrength;
+	rb.AddForce(Vector3.right*Random.Range(-jukeForce, jukeForce),ForceMode.Impulse);
 	timeToJuke += jukeInterval;
 }
 

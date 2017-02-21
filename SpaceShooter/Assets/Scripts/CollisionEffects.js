@@ -11,5 +11,9 @@ function OnCollisionEnter(other:Collision){
 	if (other.gameObject.tag == "PlayerShot"){
 		gameMgr.AddScore(pointValue);
 	}
-	Destroy(gameObject);
+	if (gameObject.tag == "Player" && other.gameObject.tag == "Boundary"){
+		return;
+	} else {
+		Destroy(gameObject);
+	}
 }
