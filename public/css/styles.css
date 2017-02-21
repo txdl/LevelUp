@@ -21,13 +21,12 @@ body {
 .name {
   width: 50%;
   height: 150px;
-  float: left;
-  vertical-align: center;
+  margin-top: 15px;
+  float: left;  
 }
 
 .mugshot {
   width: 50%;
   float: right;
-  /*position: relative;
-  right: 10px;*/
+  margin-top: 15px;
 }
