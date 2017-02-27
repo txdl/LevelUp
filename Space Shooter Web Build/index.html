@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | SpaceShooter</title>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <script src="TemplateData/UnityProgress.js"></script>
+  </head>
+  <body class="template">
+    <div class="template-wrap clear">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
+      <br>
+      <div class="logo"></div>
+      <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+      <div class="title">SpaceShooter</div>
+      <br>
+      <div style="text-align:center;padding:20px">
+        <br>
+        <button onclick="PSpeedUp()">Player Speed Up</button>
+        <button onclick="PSpeedDown()">Player Speed Down</button>
+        <button onclick="ToggleRBMode()">Toggle Acceleration-Based Controls</button>
+        <br>
+        <button onclick="PFireRateUp()">Player Fire Rate Up</button>
+        <button onclick="PFireRateDown()">Player Fire Rate Down</button>
+        <br>
+        <button onclick="ESpeedUp()">Enemy Move Speed Up</button>
+        <button onclick="ESpeedDown()">Enemy Move Speed Down</button>
+        <button onclick="ESpawnDelayUp()">Enemy Spawn Delay Up</button>
+        <button onclick="ESpawnDelayDown()">Enemy Spawn Delay Down</button>
+        <br>
+        <button onclick="EJukeStrUp()">Enemy Juke Strength Up</button>
+        <button onclick="EJukeStrDown()">Enemy Juke Strength Down</button>
+        <button onclick="EFireRateUp()">Enemy Fire Rate Up</button>
+        <button onclick="EFireRateDown()">Enemy Fire Rate Down</button>
+        <br>
+        <button onclick="CameraAngle()">Change Camera Angle</button>
+        <button onclick="TogglePlayerInvinc()">Toggle Player Invincibility</button>
+      </div>
+    </div>
+    <script type='text/javascript'>
+      var Module = {
+        TOTAL_MEMORY: 268435456,
+        errorhandler: null,     // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+        compatibilitycheck: null,
+        backgroundColor: "#222C36",
+        splashStyle: "Light",
+        dataUrl: "Release/SpaceWeb.data",
+        codeUrl: "Release/SpaceWeb.js",
+        asmUrl: "Release/SpaceWeb.asm.js",
+        memUrl: "Release/SpaceWeb.mem",
+      };
+    </script>
+    <script src="Release/UnityLoader.js"></script>
+    <script>
+        function PSpeedUp(){
+        SendMessage ("GameManager", "IncreasePlayerMoveSpeed", "");
+      }
+
+      function PSpeedDown(){
+        SendMessage ("GameManager", "DecreasePlayerMoveSpeed", "");
+      }   
+
+      function PFireRateUp(){
+        SendMessage ("GameManager", "IncreasePlayerFireRate", "");
+      }
+
+      function PFireRateDown(){
+        SendMessage ("GameManager", "DecreasePlayerFireRate", "");
+      }
+
+      function CameraAngle(){
+        SendMessage ("GameManager", "NextCameraAngle", "");
+      }
+
+      function ESpawnDelayUp(){
+        SendMessage ("GameManager", "DecreaseEnemySpawnRate", "");
+      }
+
+      function ESpawnDelayDown(){
+        SendMessage ("GameManager", "IncreaseEnemySpawnRate", "");
+      }
+
+      function EJukeStrUp(){
+        SendMessage ("GameManager", "IncreaseJukeStrength", "");
+      }
+
+      function EJukeStrDown(){
+        SendMessage ("GameManager", "DecreaseJukeStrength", "");
+      }
+
+      function ESpeedUp(){
+        SendMessage ("GameManager", "IncreaseEnemyMoveSpeed", "");
+      }
+
+      function ESpeedDown(){
+        SendMessage ("GameManager", "DecreaseEnemyMoveSpeed", "");
+      }  
+
+      function EFireRateUp(){
+        SendMessage ("GameManager", "IncreaseEnemyFireRate", "");
+      }
+
+      function EFireRateDown(){
+        SendMessage ("GameManager", "DecreaseEnemyFireRate", "");
+      } 
+
+      function TogglePlayerInvinc(){
+        SendMessage("GameManager", "TogglePlayerInvincibility","");
+      }
+
+      function ToggleRBMode(){
+        SendMessage("GameManager", "RigidbodyMovementSwitch","");
+      }
+    </script>
+  </body>
+</html>

@@ -11,6 +11,8 @@ var shotSpawn : Transform;
 //when the ship dies, generate this thing
 var deathExplosion: GameObject;
 
+var accelMomentum: boolean;
+
 //the player ship's Rigidbody (physics component)
 private var rb : Rigidbody;
 //where player ship audio is coming from
@@ -47,7 +49,25 @@ function Update () {
 }
 
 function FixedUpdate(){
-	rb.AddForce(movement*moveSpeed,ForceMode.Acceleration);
+	if (accelMomentum){
+		//acceleration and momentum-based movement
+		rb.drag = 1.5;
+		rb.AddForce(movement*moveSpeed,ForceMode.Acceleration);
+	} else {
+		//instantaneous acceleration and deceleration
+		rb.drag = 25;
+		rb.AddForce(movement*moveSpeed,ForceMode.Impulse);
+		if (rb.velocity.magnitude > moveSpeed){
+			rb.velocity = rb.velocity.normalized * moveSpeed;
+		}
+		if (moveHorizontal == 0){
+			rb.velocity.x = 0;
+		}
+		if (moveVertical == 0){
+			rb.velocity.y = 0;
+		}
+
+	}
 }
 
 function FireShot(){

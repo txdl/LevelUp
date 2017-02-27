@@ -728,6 +728,7 @@ Transform:
   - {fileID: 2126980975}
   - {fileID: 1363831537}
   - {fileID: 1171993751}
+  - {fileID: 1901546463}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -872,6 +873,13 @@ MonoBehaviour:
   - {fileID: 67749561}
   currentCameraPosition: 0
   enemySpawning: {fileID: 1172424974}
+  changeText: {fileID: 1901546464}
+  playerMoveSpeedInc: 2
+  playerFireRateInc: 0.5
+  enemySpawnRateInc: 0.05
+  enemyMoveSpeedInc: 1
+  enemyFireRateInc: 0.2
+  jukeStrengthInc: 0.2
 --- !u!82 &1172424978
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1257,6 +1265,63 @@ Transform:
   m_Father: {fileID: 1553587680}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1901546462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1901546463}
+  - component: {fileID: 1901546464}
+  m_Layer: 0
+  m_Name: Game Change Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1901546463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1901546462}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1107173268}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.02, y: 0.05}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!132 &1901546464
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1901546462}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 
+  m_Anchor: 6
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 25
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &1955548160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1433,21 @@ Prefab:
     - target: {fileID: 100006, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 2}
       propertyPath: m_Name
       value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919613890194098, guid: 738bdf56857a65f479c367c7b62c4ad7,
+        type: 2}
+      propertyPath: accelMomentum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919613890194098, guid: 738bdf56857a65f479c367c7b62c4ad7,
+        type: 2}
+      propertyPath: speedLimit
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919613890194098, guid: 738bdf56857a65f479c367c7b62c4ad7,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 2}
