@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fc0e04042cf508d4094cba8256efe718
+timeCreated: 1490390229
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Edge Cutting
+  fontNames:
+  - Edge Cutting
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

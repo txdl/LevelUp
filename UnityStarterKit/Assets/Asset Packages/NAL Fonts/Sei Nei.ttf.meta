@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 779ab3142d1ad2a42a6a9e0c5084e991
+timeCreated: 1490390228
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Da Sei Nei!
+  fontNames:
+  - Da Sei Nei!
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

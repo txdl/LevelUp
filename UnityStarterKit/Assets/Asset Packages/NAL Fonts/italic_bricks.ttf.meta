@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1b4aa6b11573ddb4eb8e4fa20a16f087
+timeCreated: 1490390228
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Italic Bricks
+  fontNames:
+  - Italic Bricks
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

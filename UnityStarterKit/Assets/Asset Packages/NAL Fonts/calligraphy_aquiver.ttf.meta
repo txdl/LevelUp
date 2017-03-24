@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d589522d2e6f46d48b7f30af473b284e
+timeCreated: 1490390229
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Calligraphy Aquiver
+  fontNames:
+  - Calligraphy Aquiver
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

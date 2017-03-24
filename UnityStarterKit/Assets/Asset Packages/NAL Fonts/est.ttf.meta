@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 635d780e82390b74a80c79ceb12effb0
+timeCreated: 1490390228
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Alt West
+  fontNames:
+  - Alt West
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

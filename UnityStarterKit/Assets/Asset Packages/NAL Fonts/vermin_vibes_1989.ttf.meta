@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1e9e941157e30fd409f390e6c6d1ef3f
+timeCreated: 1490390228
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Vermin Vibes 1989
+  fontNames:
+  - Vermin Vibes 1989
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

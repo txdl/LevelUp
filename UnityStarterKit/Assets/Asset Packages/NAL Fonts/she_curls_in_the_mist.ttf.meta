@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fe25e62a6dba9f647832f6f08bf76f0b
+timeCreated: 1490390229
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: She Curls In The Mist
+  fontNames:
+  - She Curls In The Mist
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

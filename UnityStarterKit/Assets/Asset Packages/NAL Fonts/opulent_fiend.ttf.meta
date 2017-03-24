@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e45333e29da6be54ab5106e78ff90fcc
+timeCreated: 1490390229
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Opulent Fiend
+  fontNames:
+  - Opulent Fiend
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

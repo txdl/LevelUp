@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1f914dd7db5cbde479cc2f7addeb5126
+timeCreated: 1490390228
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Distortion Of The Brain And Mind
+  fontNames:
+  - Distortion Of The Brain And Mind
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

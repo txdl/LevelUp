@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b9bed8d537299ba4898c2f95d664a83a
+timeCreated: 1490390229
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: '{PixelFlag}'
+  fontNames:
+  - '{PixelFlag}'
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

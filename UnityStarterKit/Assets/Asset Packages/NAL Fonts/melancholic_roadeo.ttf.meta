@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e37e879c4d6aa6546bf0a3269f95e63e
+timeCreated: 1490390229
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Melancholic Roadeo
+  fontNames:
+  - Melancholic Roadeo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
